@@ -1,0 +1,14 @@
+{
+  "name": "trillo",
+  "version": "1.0.0",
+  "description": "Trillo app",
+  "main": "index.js",
+  "scripts": {
+    "compile:scss": "sass sass/main.scss css/style.css -w"
+  },
+  "author": "Rafi",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.39.2"
+  }
+}
