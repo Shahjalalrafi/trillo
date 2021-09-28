@@ -1,0 +1,95 @@
+///////////////////////
+//LOgo
+
+.logo {
+    height: 3.25rem;
+    margin-left: 3.2rem;
+}
+
+
+///////////////////////
+//search
+.search {
+    flex: 0 0 40%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__input {
+        font-family: inherit;
+        color: inherit;
+        font-size: inherit;
+        width: 90%;
+        margin: 0;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        border: none;
+        background-color: var(--color-Grey-light-2);
+        margin-right: -3rem;
+        &:focus {
+            width: 100%;
+            outline: none;
+            background-color: var(--color-Grey-light-3);
+        }
+
+        &::-webkit-input-placeholder {
+            color: var(--color-Grey-light-4);
+        }
+    }
+
+    &__input:focus + &__button {
+        background-color: var(--color-Grey-light-3);
+    }
+
+
+    &__button {
+        border: none;
+        background-color: var(--color-Grey-light-2);
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-Grey-dark-3);
+    }
+}
+
+///////////////////////
+//navigation
+
+.user-nav {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__icon-box {
+        height: 100%;
+    }
+
+    &__icon {
+        height: 2.25rem;
+        width: 2.25rem;
+    }
+
+    &__notification {
+
+    }
+
+    &__user {
+
+    }
+
+    &__user-photo {
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+    }
+
+    &__user-name {
+
+    }
+}
