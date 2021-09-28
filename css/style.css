@@ -53,7 +53,6 @@ body {
   background-color: var(--color-Grey-light-2);
   margin: 8rem auto;
   box-shadow: var(--shadow-dark);
-  height: 50rem;
 }
 
 .header {
@@ -73,9 +72,13 @@ body {
   background-color: #000;
   color: #fff;
   flex: 0 0 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .hotel-view {
+  height: 100rem;
   background-color: var(--color-Primary);
   flex: 1 0;
 }
@@ -138,6 +141,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .user-nav > *:hover {
   background-color: var(--color-Grey-light-3);
@@ -166,6 +170,61 @@ body {
   height: 3.5rem;
   width: 3.5rem;
   border-radius: 50%;
+}
+
+.side-nav {
+  margin-top: 3.5rem;
+  font-size: 1.4rem;
+  list-style: none;
+}
+.side-nav__item {
+  position: relative;
+}
+.side-nav__item:not(:last-child) {
+  margin-bottom: 3px;
+}
+.side-nav__item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 3px;
+  background-color: var(--color-Primary);
+  transform: scale(0);
+  transition: transform 0.2s, width 0.4s cubic-bezier(1, 0, 0, 1) 0.2s;
+}
+.side-nav__item:hover::before, .side-nav__item--active::before {
+  transform: scale(1);
+  width: 100%;
+}
+.side-nav__item:active::before {
+  background-color: var(--color-Primary-light);
+}
+.side-nav__link:link, .side-nav__link:visited {
+  display: block;
+  font-size: inherit;
+  text-transform: uppercase;
+  color: currentColor;
+  text-decoration: none;
+  padding: 1rem 3rem;
+  position: relative;
+  z-index: 1 !important;
+  display: flex;
+  align-items: center;
+}
+.side-nav__icon {
+  fill: var(--color-Grey-light-4);
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 2rem;
+}
+
+.legal {
+  font-size: 1.4rem;
+  color: var(--color-Grey-light-4);
+  padding: 2rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
