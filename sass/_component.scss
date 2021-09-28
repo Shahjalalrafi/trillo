@@ -177,9 +177,120 @@
     }
 }
 
+
+///////////////////////
+//legal
 .legal {
     font-size: 1.4rem;
     color: var(--color-Grey-light-4);
     padding: 2rem;
     text-align: center;
+}
+
+///////////////////////
+//gallery
+
+.gallery {
+    display: flex;
+    &__item {
+    }
+
+    &__photo {
+        width: 100%;
+        display: block;
+    }
+}
+
+///////////////////////
+//overview
+.overview {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color-Grey-light-4);
+    &__heading {
+        font-size: 2.6rem;
+        font-weight: 100;
+        padding: 3.2rem;
+    }
+
+    &__stars{
+        margin-right: auto;
+    }
+
+    &__icon-star,
+    &__icon-location {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-Primary);
+    }
+
+    &__location {
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon-location {
+        margin-right: .6rem;
+    }
+
+    &__rating {
+        margin-left: 3rem;
+        background-color: var(--color-Primary);
+        color: #fff;
+        align-self: stretch;
+        padding: 0 2rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &--average {
+            font-size: 2.2rem;
+            font-weight: 400;
+        }
+
+        &--count {
+            font-size: 1rem;
+        }
+    }
+}
+
+///////////////////////
+//inline button
+.btn-inline {
+    border: none;
+    background-color: transparent;
+    display: inline-block;
+    font-size: inherit;
+    padding-bottom: 2px ;
+    border-bottom: 1px solid currentColor;
+    color: var(--color-Primary);
+    cursor: pointer;
+
+    &:hover {
+        color: var(--color-Grey-light-4);
+    }
+
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        box-shadow: none;
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 1rem 4rem rgba(0,0,0, .2);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: none;
+    }
 }
