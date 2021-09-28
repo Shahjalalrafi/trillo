@@ -44,6 +44,7 @@ html {
 }
 
 body {
+    color: var(--color-Grey-dark-2);
     background-image: linear-gradient(to right bottom, var(--color-Primary), var(--color-Primary-dark));
     background-repeat: no-repeat;
     min-height: 100vh;

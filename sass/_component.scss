@@ -61,13 +61,25 @@
 //navigation
 
 .user-nav {
-    background-color: red;
+    align-self: stretch;
+
     display: flex;
-    justify-content: center;
     align-items: center;
 
-    &__icon-box {
+    & > * {
+        padding: 0 2rem;        
         height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    & > *:hover {
+        background-color: var(--color-Grey-light-3);
+        
+    }
+
+    &__icon-box {
+        position: relative;
     }
 
     &__icon {
@@ -76,20 +88,23 @@
     }
 
     &__notification {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.3rem;
+        background-color: var(--color-Primary);
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: 100px;
+        color: #fff;
 
-    }
-
-    &__user {
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__user-photo {
         height: 3.5rem;
         width: 3.5rem;
         border-radius: 50%;
-    }
-
-    &__user-name {
-
     }
 }
