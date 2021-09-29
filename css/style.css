@@ -22,7 +22,9 @@ Grey dark 3: #999
   --color-Grey-dark-1: #333;
   --color-Grey-dark-2: #777;
   --color-Grey-dark-3: #999;
-  --shadow-dark: 0 2rem 6rem rgba(0,0,0,.2) ;
+  --shadow-dark: 0 2rem 6rem rgba(0,0,0,.2);
+  --shadow-light: 0 2rem 5rem rgba(0,0,0,.2);
+  --line: 1px solid #f0eeee;
 }
 
 * {
@@ -49,7 +51,7 @@ body {
 }
 
 .container {
-  max-width: 120rem;
+  max-width: 140rem;
   background-color: var(--color-Grey-light-2);
   margin: 8rem auto;
   box-shadow: var(--shadow-dark);
@@ -59,7 +61,7 @@ body {
   height: 7rem;
   font-size: 1.4rem;
   background-color: #fff;
-  border-bottom: 1px solid var(--color-Grey-light-4);
+  border-bottom: var(--line);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -79,8 +81,42 @@ body {
 }
 
 .hotel-view {
-  height: 100rem;
   flex: 1 0;
+  background-color: var(--color-Grey-light-1);
+}
+
+.details {
+  display: flex;
+  gap: 4.5rem;
+  font-size: 1.4rem;
+  padding: 4.5rem;
+  border-bottom: var(--line);
+}
+
+.description {
+  flex: 0 0 60%;
+  font-size: 1.4rem;
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+  padding: 3rem;
+}
+
+.user-reviews {
+  flex: 1;
+  padding: 3rem;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+}
+.cta__book-now {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 .logo {
@@ -238,7 +274,7 @@ body {
 .overview {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-Grey-light-4);
+  border-bottom: var(--line);
 }
 .overview__heading {
   font-size: 2.6rem;
@@ -290,8 +326,15 @@ body {
   color: var(--color-Primary);
   cursor: pointer;
 }
+.btn-inline span {
+  margin-left: 0.3rem;
+  transition: margin-left 0.2s;
+}
 .btn-inline:hover {
   color: var(--color-Grey-light-4);
+}
+.btn-inline:hover span {
+  margin-left: 0.8rem;
 }
 .btn-inline:focus {
   outline: none;
@@ -311,6 +354,142 @@ body {
     transform: scale(1);
     box-shadow: none;
   }
+}
+.paragraph {
+  font-size: 2rem;
+}
+
+.paragraph:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.list {
+  list-style-type: none;
+  padding: 3rem 0;
+  margin: 3rem 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: var(--line);
+  border-bottom: var(--line);
+}
+.list__item {
+  flex: 0 0 50%;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+}
+.list__item::before {
+  content: "";
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-right: 0.7rem;
+  background-color: var(--color-Primary);
+  -webkit-mask-image: url(../img/chevron-thin-right.svg);
+  -webkit-mask-size: cover;
+}
+
+.recommend {
+  display: flex;
+  align-items: center;
+}
+.recommend__count {
+  margin-right: auto;
+}
+.recommend__photo {
+  box-sizing: content-box;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin-right: -2rem;
+  border: 3px solid #fff;
+}
+
+.review {
+  background-color: #fff;
+  margin-bottom: 3.5rem;
+  padding: 3rem;
+  box-shadow: var(--shadow-light);
+  position: relative;
+  overflow: hidden;
+}
+.review::before {
+  content: '"';
+  position: absolute;
+  top: -2rem;
+  left: -1.2rem;
+  font-size: 20rem;
+  font-family: sans-serif;
+  color: var(--color-Grey-light-3);
+}
+.review__text {
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+.review__user {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.review__photo {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+}
+.review__user-box {
+  margin-right: auto;
+}
+.review__user-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+.review__user-date {
+  font-size: 1rem;
+}
+.review__rating {
+  font-size: 2.6rem;
+  color: var(--color-Primary);
+}
+
+.btn {
+  border: none;
+  font-size: 2rem;
+  border-radius: 100px;
+  color: #fff;
+  background-image: linear-gradient(to right, var(--color-Primary-light), var(--color-Primary));
+  position: relative;
+  overflow: hidden;
+}
+.btn > * {
+  display: inline-block;
+  transition: all 0.5s;
+  height: 100%;
+  width: 100%;
+}
+.btn__visible {
+  padding: 2rem 7rem;
+}
+.btn__invisible {
+  position: absolute;
+  padding: 2rem 0;
+  left: 0;
+  top: -100%;
+}
+.btn:hover .btn__visible {
+  transform: translateY(100%);
+}
+.btn:hover .btn__invisible {
+  top: 0;
+}
+.btn:hover {
+  background-image: linear-gradient(to right, var(--color-Primary), var(--color-Primary-light));
+}
+.btn:focus {
+  outline: none;
+  animation: pulsate 0.8s infinite;
 }
 
 /*# sourceMappingURL=style.css.map */
