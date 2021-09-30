@@ -15,6 +15,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width : $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+    }
     &__input {
         font-family: inherit;
         color: inherit;
@@ -119,6 +124,12 @@
     font-size: 1.4rem;
     list-style: none;
 
+    @media only screen and (max-width : $bp-medium) {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+    }
+
     &__item {
         position: relative;
         
@@ -163,17 +174,24 @@
 
         display: flex;
         align-items: center;
+
+        
+        @media only screen and (max-width : $bp-small) {
+            flex-direction: column;
+            padding: .5rem 1.5rem;
+        }
     }
 
-    &__link:hover {
-
-    }
 
     &__icon {
         fill: var(--color-Grey-light-4);
         width: 1.7rem;
         height: 1.7rem;
         margin-right: 2rem;
+        @media only screen and (max-width : $bp-small) {
+            margin-right: 0;
+            margin-bottom: 1.5rem;
+        }
     }
 }
 
@@ -185,6 +203,10 @@
     color: var(--color-Grey-light-4);
     padding: 2rem;
     text-align: center;
+
+    @media only screen and (max-width : $bp-large) {
+        display: none;
+    }
 }
 
 ///////////////////////
@@ -207,14 +229,25 @@
     display: flex;
     align-items: center;
     border-bottom: var(--line);
+
+    @media only screen and (max-width : $bp-smallest) {
+        justify-content: space-between;
+    }
     &__heading {
         font-size: 2.6rem;
         font-weight: 100;
         padding: 3.2rem;
+        @media only screen and (max-width : $bp-small) {
+            font-size: 1.6rem;
+            padding: 1rem;
+        }
     }
 
     &__stars{
         margin-right: auto;
+        @media only screen and (max-width : $bp-smallest) {
+            display: none;
+        }
     }
 
     &__icon-star,
@@ -363,13 +396,16 @@
         margin-right: auto;
     }
 
+    &__friends{
+        display: flex;
+    }
 
     &__photo {
         box-sizing: content-box;
         width: 5rem;
         height: 5rem;
         border-radius: 50%;
-        margin-right: -2rem;
+        margin-right: -3rem;
         border: 3px solid #fff;
     }
 }
@@ -383,6 +419,14 @@
     box-shadow: var(--shadow-light);
     position: relative;
     overflow: hidden;
+
+    @media only screen and (max-width : $bp-medium) {
+        margin: 1rem;
+    }
+    @media only screen and (max-width : $bp-small) {
+        margin: 0rem;
+        margin-bottom: 2rem;
+    }
 
     &::before {
         content: "\0022";
