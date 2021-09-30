@@ -51,10 +51,15 @@ body {
 }
 
 .container {
-  max-width: 140rem;
+  max-width: 120rem;
   background-color: var(--color-Grey-light-2);
   margin: 8rem auto;
   box-shadow: var(--shadow-dark);
+}
+@media only screen and (max-width: 1200px) {
+  .container {
+    margin: 0;
+  }
 }
 
 .header {
@@ -384,9 +389,18 @@ body {
   width: 1.2rem;
   height: 1.2rem;
   margin-right: 0.7rem;
-  background-color: var(--color-Primary);
-  -webkit-mask-image: url(../img/chevron-thin-right.svg);
-  -webkit-mask-size: cover;
+  background-image: url(../img/chevron-thin-right.svg);
+  background-size: cover;
+}
+@supports (-webkit-mask-image: url()) or (mask-image: url()) {
+  .list__item::before {
+    background-color: var(--color-Primary);
+    -webkit-mask-image: url(../img/chevron-thin-right.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(../img/chevron-thin-right.svg);
+    mask-size: cover;
+    background-image: none;
+  }
 }
 
 .recommend {

@@ -1,8 +1,12 @@
 .container {
-    max-width: 140rem;
+    max-width: 120rem;
     background-color: var(--color-Grey-light-2);
     margin: 8rem auto;
     box-shadow: var(--shadow-dark);
+
+    @media only screen and (max-width:1200px) {
+        margin: 0;
+    }
 }
 
 .header {
